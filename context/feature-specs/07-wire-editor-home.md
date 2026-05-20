@@ -16,12 +16,9 @@ Create a hook in `hooks/` that manages dialog state and project mutations.
 
 - manage create dialog state
 - manage project name input
-- generate a short unique suffix
-- slugify the name to create the room ID
 - call `POST /api/projects`
-- navigate to the new workspace
-
-The project ID and Liveblocks room ID should stay aligned.
+- use the created Prisma-generated project ID directly as the Liveblocks room ID (`roomId === projectId`) for room creation and navigation
+- navigate to the new workspace (slugs should be used for user-facing URLs instead of room IDs)
 
 **Rename**
 
