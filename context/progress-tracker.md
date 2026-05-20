@@ -4,15 +4,15 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Current Phase
 
-- Not started
+- Implementation
 
 ## Current Goal
 
-- Define the immediate implementation goal here.
+- Implement 01-design-system (Design System & UI Primitives)
 
 ## Completed
 
-- None yet.
+- 01-design-system.md (shadcn/ui setup & components, strict dark theme)
 
 ## In Progress
 
