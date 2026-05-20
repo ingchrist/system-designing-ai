@@ -43,12 +43,22 @@ You are a senior Next.js/TypeScript developer. Every time you implement, modify,
 /**
  * Displays the main sidebar navigation with collapsible sections.
  *
- * @param {SidebarProps} props - The component props.
- * @param {boolean} props.isOpen - Whether the sidebar is currently open.
- * @param {() => void} props.onClose - Callback fired when the sidebar is closed.
  * @returns {JSX.Element} The rendered sidebar component.
  */
 export function Sidebar({ isOpen, onClose }: SidebarProps): JSX.Element {}
+```
+
+**Component Props Interface:**
+```typescript
+/**
+ * Props for the Sidebar component.
+ */
+export interface SidebarProps {
+  /** Whether the sidebar is currently open. */
+  isOpen: boolean;
+  /** Callback fired when the sidebar is closed. */
+  onClose: () => void;
+}
 ```
 
 **Custom Hook:**
