@@ -26,8 +26,7 @@ export const metadata: Metadata = {
  * RootLayout component that serves as the top-level layout for the application.
  * It sets up the HTML document, applies custom Geist fonts, and renders the application body.
  *
- * @param {Readonly<{ children: React.ReactNode }>} props - The component props.
- * @param {React.ReactNode} props.children - The child components to render inside the body.
+ * @param {React.ReactNode} children - The child components to render inside the body.
  * @returns {JSX.Element} The root HTML document wrapping the application.
  */
 export default function RootLayout({
