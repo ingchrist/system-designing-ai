@@ -1,5 +1,12 @@
 import Image from "next/image";
 
+/**
+ * Home component serving as the default landing page for the application.
+ * It renders a welcome screen with the Next.js logo and provides quick links
+ * to Next.js documentation, templates, and Vercel deployment options.
+ *
+ * @returns {JSX.Element} The rendered landing page.
+ */
 export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
