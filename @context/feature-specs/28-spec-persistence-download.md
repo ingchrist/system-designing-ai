@@ -56,3 +56,4 @@ It should:
 - download route validates access before returning file
 - response is a Markdown attachment
 - TypeScript and build pass
+

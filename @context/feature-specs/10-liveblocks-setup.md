@@ -53,3 +53,4 @@ All required Liveblocks packages are already installed.
 - auth route verifies project access
 - user metadata is attached to sessions
 - `npm run build` passes
+

@@ -69,3 +69,4 @@ Follow the existing Trigger.dev task patterns in the codebase for retries, loggi
 - `POST /api/ai/spec/token` only returns a token for the run owner
 - `generate-spec` runs through Trigger.dev and returns Markdown output
 - TypeScript and build pass
+

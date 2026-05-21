@@ -51,3 +51,4 @@ All packages are already installed.`GOOGLE_AI_API_KEY` is already in `.env.local
 - Status messages reflect task progress.
 - Errors are handled without breaking the canvas.
 - `npm run build` passes.
+

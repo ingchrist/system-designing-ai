@@ -41,3 +41,4 @@ Add shared AI activity indicators so everyone in the room can see when generatio
 - Cursor badges read `thinking` from presence.
 - Feed messages are validated through the task schema.
 - `npm run build` passes.
+

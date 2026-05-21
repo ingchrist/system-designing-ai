@@ -51,3 +51,4 @@ Connect the hook to the sidebar and dialogs.
 - rename updates correctly
 - delete refreshes or redirects correctly
 - `npm run build` passes
+

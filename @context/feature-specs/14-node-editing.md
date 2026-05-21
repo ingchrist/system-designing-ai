@@ -35,3 +35,4 @@ Add resizing and inline label editing to canvas nodes.
 - Editing closes on blur or Escape.
 - Text interactions do not trigger canvas drag or pan.
 - `npm run build` passes without type errors.
+

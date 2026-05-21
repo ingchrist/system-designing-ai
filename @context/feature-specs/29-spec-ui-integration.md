@@ -51,3 +51,4 @@ Integrate spec generation results into the editor so users can view, preview, an
 - modal shows rendered Markdown content
 - download action triggers file download
 - TypeScript and build pass
+

@@ -14,12 +14,19 @@ Add autosave and loading for the collaborative canvas so project state is persis
 2. Add canvas save/load API routes.
    Create: `PUT /api/projects/[projectId]/canvas`
    This route should:
+   - require and validate an authenticated user (use `getSessionUser` or similar)
+   - load the project via Prisma and verify the authenticated user is a project member with write permission
+   - return 401 if not authenticated or 403 if not authorized
    - receive the latest canvas JSON
    - upload the JSON to Vercel Blob
    - store the returned blob URL on the matching Prisma project record
+   - propagate the acting user ID into audit/log entries for the blob write
 
    Create: `GET /api/projects/[projectId]/canvas`
    This route should:
+   - require and validate an authenticated user (use `getSessionUser` or similar)
+   - load the project via Prisma and verify the authenticated user is a project member with read permission
+   - return 401 if not authenticated or 403 if not authorized
    - read the project’s saved blob URL from Prisma
    - fetch the saved canvas JSON from Vercel Blob
    - return the canvas state to the editor

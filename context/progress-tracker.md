@@ -8,13 +8,14 @@ Update this file whenever the current phase, active feature, or implementation s
 
 ## Current Goal
 
-- Complete 02-editor-chrome (Editor Navbar & Project Sidebar)
+- None
+
 ## Completed
 
 - 01-design-system.md (shadcn/ui setup & components, strict dark theme)
 - Editor Navbar Component (`components/editor/editor-navbar.tsx`)
 - Project Sidebar Component (`components/editor/project-sidebar.tsx`)
-- Editor Chrome Integration (navbar + sidebar in root layout)
+- Editor Chrome Integration (navbar + sidebar in root layout) — 02-editor-chrome.md is fully completed
 
 ## In Progress
 

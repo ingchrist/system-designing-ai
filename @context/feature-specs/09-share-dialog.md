@@ -46,3 +46,4 @@ Do not add a local user table.
 - collaborators see read-only access
 - collaborator names/avatars load from Clerk when available
 - `npm run build` passes
+

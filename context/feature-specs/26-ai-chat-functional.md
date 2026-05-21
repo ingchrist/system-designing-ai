@@ -39,13 +39,13 @@ in real time, and reflect AI-driven canvas updates through Liveblocks.
 
 Chat bubbles
 
-- User: green accent background (`#62C073`), readable contrast text
-- AI: dark background, light text
+- User: use the green node color from the canvas palette (text color `#62C073` or reference token `NODE_COLORS.green.text`), readable contrast text
+- AI: use `--bg-surface` background with `--text-primary` text
 
 Submit button
 
-- Enabled: green accent (`#62C073`)
-- Disabled: dimmed state
+- Enabled: use the green node color from the canvas palette (`NODE_COLORS.green.text` or `#62C073`)
+- Disabled: use `--text-muted` color
 - While running: show spinner
 
 Status strip
