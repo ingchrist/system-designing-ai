@@ -1,6 +1,7 @@
 'use client';
 
 import { X, Plus } from 'lucide-react';
+import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
@@ -10,6 +11,19 @@ interface ProjectSidebarProps {
 }
 
 export function ProjectSidebar({ isOpen, onClose }: ProjectSidebarProps) {
+  // Handle Escape key to close sidebar
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleKeyDown);
+      return () => document.removeEventListener('keydown', handleKeyDown);
+    }
+  }, [isOpen, onClose]);
   return (
     <>
       {/* Overlay backdrop - only visible when sidebar is open */}
@@ -23,15 +37,21 @@ export function ProjectSidebar({ isOpen, onClose }: ProjectSidebarProps) {
 
       {/* Sidebar */}
       <aside
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="sidebar-projects-title"
         className={`fixed left-0 top-0 bottom-0 w-80 bg-bg-surface border-r border-border-default z-40 transform transition-transform duration-300 ease-in-out pt-14 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         aria-hidden={!isOpen}
+        tabIndex={-1}
       >
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-4 border-b border-border-default">
-            <h2 className="text-lg font-semibold text-text-primary">Projects</h2>
+            <h2 id="sidebar-projects-title" className="text-lg font-semibold text-text-primary">
+              Projects
+            </h2>
             <Button
               variant="ghost"
               size="icon"
@@ -77,7 +97,10 @@ export function ProjectSidebar({ isOpen, onClose }: ProjectSidebarProps) {
               className="w-full gap-2 bg-accent-primary hover:bg-accent-primary/90 text-black font-medium"
               onClick={() => {
                 // TODO: Open new project dialog
+                // This will be connected to the project creation flow in a future iteration
+                console.log('New Project clicked - awaiting dialog implementation');
               }}
+              aria-label="Create a new project"
             >
               <Plus className="h-5 w-5" />
               New Project
