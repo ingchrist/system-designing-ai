@@ -3,6 +3,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { useState } from "react";
 import { EditorNavbar } from "@/components/editor/editor-navbar";
+import { ProjectSidebar } from "@/components/editor/project-sidebar";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -34,10 +35,14 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-bg-base">
         <EditorNavbar
           sidebarOpen={sidebarOpen}
-          onSidebarToggle={() => setSidebarOpen(!sidebarOpen)}
+          onSidebarToggle={() => setSidebarOpen((prev) => !prev)}
+        />
+        <ProjectSidebar
+          isOpen={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
         />
         <main className="flex-1 pt-14">{children}</main>
       </body>
