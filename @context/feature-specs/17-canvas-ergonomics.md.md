@@ -52,3 +52,4 @@ Add a floating control bar for zoom and undo/redo, then wire the same actions to
 - Keyboard shortcuts are handled in `hooks/useKeyboardShortcuts`.
 - Shortcut handling skips editable fields.
 - `npm run build` passes.
+

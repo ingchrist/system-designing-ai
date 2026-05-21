@@ -78,3 +78,4 @@ Use mock project data only. Do not add API calls or persistence.
 - slug preview works
 - no TypeScript errors
 - no lint errors
+

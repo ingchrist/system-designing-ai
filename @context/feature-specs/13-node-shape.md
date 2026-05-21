@@ -31,3 +31,4 @@ Replace the placeholder node renderer with proper shape rendering and a drag pre
 - SVG shapes render and scale correctly for diamond, hexagon, and cylinder.
 - Shape dragging shows a ghost preview matching the dragged shape.
 - `npm run build` passes without type errors.
+

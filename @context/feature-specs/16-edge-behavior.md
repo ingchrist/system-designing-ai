@@ -54,3 +54,4 @@ to follow, easier to click, and support inline labels.
   midpoint coordinates.
 - Edge labels update through the existing edge data flow.
 - npm run build passes without type errors.
+

@@ -85,3 +85,4 @@ General
 - Status strip appears only during active runs
 - Chat updates appear across multiple sessions
 - No TypeScript or build errors
+

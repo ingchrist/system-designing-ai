@@ -51,3 +51,4 @@ install: @clerk/ui.
 - auth pages use CSS variables with no hardcoded colors
 - `ClerkProvider` wraps the root layout
 - `npm run build` passes
+

@@ -52,3 +52,4 @@ Replace the canvas placeholder with a Liveblocks-backed React Flow canvas.
 - React Flow uses Liveblocks-synced nodes and edges.
 - Shared canvas types exist in `types/canvas.ts`.
 - `npm run build` passes.
+

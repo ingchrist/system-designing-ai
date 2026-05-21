@@ -64,3 +64,4 @@ Complete the existing AI sidebar placeholder and turn it into a proper floating 
 - AI Architect tab has empty state, starter chips, and input UI.
 - Specs tab has a generate button and a static demo spec card.
 - `npm run build` passes.
+

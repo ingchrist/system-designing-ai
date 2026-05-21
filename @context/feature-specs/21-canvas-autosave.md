@@ -71,3 +71,4 @@ Add autosave and loading for the collaborative canvas so project state is persis
 - Saved canvas does not load if the room already has active nodes or edges.
 - **Race condition protected**: Two users joining simultaneously cannot result in one user's changes being overwritten during initialization.
 - `npm run build` passes.
+

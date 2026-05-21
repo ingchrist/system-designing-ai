@@ -72,3 +72,4 @@ without changing the editor home navbar.
   React Flow mouse events.
 - Canvas renders live cursors for other participants only.
 - `npm run build` passes.
+

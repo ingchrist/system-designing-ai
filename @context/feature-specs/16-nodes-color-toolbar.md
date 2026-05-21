@@ -41,3 +41,4 @@ Add a small floating color toolbar so selected nodes can change both their backg
 - Selected nodes show a floating color toolbar.
 - Swatch selection updates both node and text colors.
 - `npm run build` passes without type errors.
+

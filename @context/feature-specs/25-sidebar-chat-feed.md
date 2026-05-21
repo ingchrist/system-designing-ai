@@ -44,3 +44,4 @@ This is only for chat messages. Keep it separate from `ai-status-feed`, which ha
 - Chat messages are validated before rendering.
 - `ai-chat` remains separate from `ai-status-feed`.
 - `npm run build` passes.
+
