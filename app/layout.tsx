@@ -1,51 +1,62 @@
-'use client';
-
-import { Geist, Geist_Mono } from "next/font/google";
-import { useState } from "react";
-import { EditorNavbar } from "@/components/editor/editor-navbar";
-import { ProjectSidebar } from "@/components/editor/project-sidebar";
-import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import React from 'react';
+import { ClerkProvider } from '@clerk/nextjs';
+import { dark } from '@clerk/themes';
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
+import './globals.css';
 
 /**
- * RootLayout component that serves as the top-level layout for the application.
- * It sets up the HTML document, applies custom Geist fonts, and renders the application body.
- *
- * @param {React.ReactNode} children - The child components to render inside the body.
- * @returns {JSX.Element} The root HTML document wrapping the application.
+ * Root layout metadata — sets the document title and description.
  */
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+export const metadata = {
+  title: 'System Designing AI',
+  description: 'AI-powered system design workspace',
+};
 
+/**
+ * Props for the RootLayout component.
+ */
+interface RootLayoutProps {
+  /** Page content rendered inside the layout shell. */
+  children: React.ReactNode;
+}
+
+/**
+ * Root layout for the entire application.
+ *
+ * Wraps every page with `ClerkProvider` using Clerk's dark base theme and
+ * CSS-variable overrides that map to the project's design tokens — no
+ * hardcoded color values.
+ *
+ * Auth pages (`/sign-in`, `/sign-up`) render without editor chrome.
+ * The editor chrome lives in the `(editor)` route group layout.
+ *
+ * @param {RootLayoutProps} props - Layout props containing child page content.
+ * @returns The root HTML document with Clerk auth context.
+ */
+export default function RootLayout({ children }: RootLayoutProps): React.ReactElement {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    <ClerkProvider
+      appearance={{
+        theme: dark,
+        variables: {
+          colorBackground: 'var(--bg-surface)',
+          colorPrimary: 'var(--accent-primary)',
+          colorDanger: 'var(--state-error)',
+          colorNeutral: 'var(--text-muted)',
+          borderRadius: '0.75rem',
+          fontFamily: 'var(--font-geist-sans)',
+        },
+      }}
     >
-      <body className="min-h-full flex flex-col bg-bg-base">
-        <EditorNavbar
-          sidebarOpen={sidebarOpen}
-          onSidebarToggle={() => setSidebarOpen((prev) => !prev)}
-        />
-        <ProjectSidebar
-          isOpen={sidebarOpen}
-          onClose={() => setSidebarOpen(false)}
-        />
-        <main className="flex-1 pt-14">{children}</main>
-      </body>
-    </html>
+      <html
+        lang="en"
+        className={`${GeistSans.variable} ${GeistMono.variable} h-full antialiased`}
+      >
+        <body className="min-h-full bg-bg-base text-text-primary antialiased">
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
