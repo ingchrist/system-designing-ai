@@ -18,7 +18,8 @@ export function EditorNavbar({ sidebarOpen, onSidebarToggle }: EditorNavbarProps
           size="icon"
           onClick={onSidebarToggle}
           className="text-slate-400 hover:text-slate-100"
-          aria-label="Toggle sidebar"
+          aria-label={sidebarOpen ? "Collapse sidebar" : "Expand sidebar"}
+          aria-pressed={sidebarOpen}
         >
           {sidebarOpen ? (
             <PanelLeftOpen className="h-5 w-5" />
