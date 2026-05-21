@@ -41,3 +41,4 @@ export function EditorNavbar({ sidebarOpen, onSidebarToggle }: EditorNavbarProps
     </nav>
   );
 }
+
