@@ -38,7 +38,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-bg-base">
         <EditorNavbar
           sidebarOpen={sidebarOpen}
-          onSidebarToggle={() => setSidebarOpen(!sidebarOpen)}
+          onSidebarToggle={() => setSidebarOpen((prev) => !prev)}
         />
         <ProjectSidebar
           isOpen={sidebarOpen}
