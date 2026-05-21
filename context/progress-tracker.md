@@ -13,6 +13,7 @@ Update this file whenever the current phase, active feature, or implementation s
 ## Completed
 
 - 01-design-system.md (shadcn/ui setup & components, strict dark theme)
+- Editor Navbar Component (`components/editor/editor-navbar.tsx`)
 
 ## In Progress
 
